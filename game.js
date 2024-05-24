@@ -7,7 +7,7 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-function generateNumber() {
+const generateNumber = () => {
   const numbers = [];
   while (numbers.length < 4) {
     const random = Math.floor(Math.random() * 10);
@@ -16,9 +16,9 @@ function generateNumber() {
     }
   }
   return numbers.join('');
-}
+};
 
-function countCowsAndBulls(secret, guess) {
+const countCowsAndBulls = (secret, guess) => {
   let cows = 0;
   let bulls = 0;
 
@@ -31,9 +31,9 @@ function countCowsAndBulls(secret, guess) {
   }
 
   return { cows, bulls };
-}
+};
 
-function playGame() {
+const playGame = () => {
   const secretNumber = generateNumber();
   let attempts = 0;
   const maxAttempts = 10;
@@ -56,6 +56,6 @@ function playGame() {
       }
     }
   });
-}
+};
 
 playGame();
